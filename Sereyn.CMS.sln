@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{D750E2EB-7F07-401B-8C91-BE541E8034D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8C08DD67-9758-4710-A6F0-9F22D41142E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Tools", "Build Tools", "{CE427C3F-9B0E-49AE-843A-6BCA1395F593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sereyn.CMS", "Sereyn.CMS\Sereyn.CMS.csproj", "{45F96653-FB57-401F-A287-D5B7A877CB31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45F96653-FB57-401F-A287-D5B7A877CB31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F96653-FB57-401F-A287-D5B7A877CB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F96653-FB57-401F-A287-D5B7A877CB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F96653-FB57-401F-A287-D5B7A877CB31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45F96653-FB57-401F-A287-D5B7A877CB31} = {D750E2EB-7F07-401B-8C91-BE541E8034D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D50A9E4E-EADA-4845-AC4F-3708251F9F39}
+	EndGlobalSection
+EndGlobal
