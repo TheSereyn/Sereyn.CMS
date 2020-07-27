@@ -44,7 +44,10 @@ namespace Sereyn.CMS.Contents
                 string.Format("{0}",
                 contentFileLocation));
 
-            return await response.Content.ReadAsStreamAsync();
+            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                throw new FileNotFoundException("Unable to find requested content file.", contentFileLocation);
+            else
+                return await response.Content.ReadAsStreamAsync();
         }
 
         #endregion

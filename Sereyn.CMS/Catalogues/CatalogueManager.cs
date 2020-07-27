@@ -47,7 +47,11 @@ namespace Sereyn.CMS.Catalogues
             };
 
             HttpResponseMessage response = await http.GetAsync(catalogueFile);
-            return await response.Content.ReadAsStreamAsync();
+
+            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                throw new FileNotFoundException("Unable to find requested catalogue file.", catalogueFile);
+            else 
+                return await response.Content.ReadAsStreamAsync();
         }
 
         #endregion
