@@ -28,7 +28,6 @@ namespace Sereyn.CMS.Contents
 
         public async Task<Content> GetContentAsync(string requestedContentFile)
         {
-            Console.WriteLine("Content File: " + requestedContentFile);
             return Content.GetContentFromStream(
                 await GetContentStreamAsync(requestedContentFile));
         }

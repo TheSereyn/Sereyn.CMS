@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Sereyn.CMS.Catalogues.Models;
-using System;
 using System.IO;
 using System.Net.Http;
 using System.Text.Json;

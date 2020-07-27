@@ -1,13 +1,9 @@
-﻿using Markdig;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Sereyn.CMS.Catalogues;
 using Sereyn.CMS.Catalogues.Models;
 using Sereyn.CMS.Contents;
 using Sereyn.CMS.Contents.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Sereyn.CMS.Examples.Blog.Pages
 {
@@ -42,12 +38,9 @@ namespace Sereyn.CMS.Examples.Blog.Pages
 
         private MarkupString ContentHtml()
         {
-            
-
             return new MarkupString(
                 content.HtmlMarkup
-                )
-            );
+                );
         }
 
         #endregion
