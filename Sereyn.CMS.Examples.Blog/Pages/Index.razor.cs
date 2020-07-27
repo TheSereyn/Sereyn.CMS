@@ -42,10 +42,10 @@ namespace Sereyn.CMS.Examples.Blog.Pages
 
         private MarkupString ContentHtml()
         {
+            
+
             return new MarkupString(
-                Markdown.ToHtml(
-                    content.Markdown,
-                    new MarkdownPipelineBuilder().UseAdvancedExtensions().Build()
+                content.HtmlMarkup
                 )
             );
         }

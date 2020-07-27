@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Markdig;
 
 namespace Sereyn.CMS.Contents.Models
 {
@@ -16,7 +17,7 @@ namespace Sereyn.CMS.Contents.Models
             return new Content
             {
                 Configuration = GetConfiguration(content, out reader),
-                Markdown = reader.ReadToEnd()
+                RawMarkdown = reader.ReadToEnd()
             };
         }
 
@@ -51,11 +52,11 @@ namespace Sereyn.CMS.Contents.Models
 
                 if (OpenBracketCounter == 0 && c == '}')
                 {
-                    break;
+                    return new String(chars.ToArray());
                 }
             }
 
-            return new String(chars.ToArray());
+            throw new InvalidDataException("Json configuration missing or invalid in content file.");
         }
         private static Stream GenerateStream(string jsonConfiguration)
         {
@@ -72,7 +73,16 @@ namespace Sereyn.CMS.Contents.Models
         #region Properties
 
         public IConfiguration Configuration { get; private set; }
-        public string Markdown { get; private set; }
+        public string RawMarkdown { get; private set; }
+        public string HtmlMarkup {
+            get
+            {
+                return Markdown.ToHtml(
+                    RawMarkdown,
+                    new MarkdownPipelineBuilder().UseAdvancedExtensions().Build()
+                    );
+            }
+        }
 
         #endregion
 
