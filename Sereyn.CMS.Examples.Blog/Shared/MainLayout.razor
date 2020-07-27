@@ -1,15 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <NavMenu />
-</div>
+<header>
+    <div class="d-flex justify-content-center">
+        <h1 class="py-1">Title</h1>
+    </div>    
+    <NavMenu></NavMenu>
+</header>
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
+<Featured />
 
-    <div class="content px-4">
-        @Body
-    </div>
-</div>
+<main>
+    @Body
+</main>
+
+<footer class="d-flex justify-content-center">
+    <p>Foooooter!</p>
+</footer>

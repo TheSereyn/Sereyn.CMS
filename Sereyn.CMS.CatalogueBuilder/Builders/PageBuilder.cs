@@ -47,13 +47,30 @@ namespace Sereyn.CMS.CatalogueBuilder.Builders
                 GroupCollection regexGroups = regex.Match(file.File).Groups;
 
                 IConfiguration contentConfig = OpenContentFile(file.File);
+                string fileLocation = "";
+
+                if (regexGroups["Category"].Value != "")
+                {
+                    fileLocation = string.Format("Content/{0}/{1}/{2}.md",
+                        regexGroups["Type"].Value,
+                        regexGroups["Category"].Value.Replace(@"\", "/") ?? "",
+                        regexGroups["Filename"].Value
+                        );
+                }
+                else
+                {
+                    fileLocation = string.Format("Content/{0}/{1}.md",
+                        regexGroups["Type"].Value,
+                        regexGroups["Filename"].Value
+                        );
+                }
 
                 contentItems.Add(new Page
                 {
                     Created = file.Created,
                     LastUpdated = file.LastUpdated,
                     Title = contentConfig["Title"],
-                    File = regexGroups["Filename"].Value
+                    File = fileLocation
                 });
             }
 

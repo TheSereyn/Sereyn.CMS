@@ -11,11 +11,11 @@ namespace Sereyn.CMS.CatalogueBuilder.Builders
 {
     internal static class CategoryBuilder
     {
-        public static Catalogue<Category> CategoryCatalogue { get; set; } = new Catalogue<Category>();
+        public static Catalogue<ArticleCategory> CategoryCatalogue { get; set; } = new Catalogue<ArticleCategory>();
 
         static CategoryBuilder()
         {
-            CategoryCatalogue.Items = new List<Category>();
+            CategoryCatalogue.Items = new List<ArticleCategory>();
         }
 
         internal static void Build(string contentFolderLocation)
@@ -32,10 +32,10 @@ namespace Sereyn.CMS.CatalogueBuilder.Builders
             SaveCatalogue();
         }
 
-        private static List<Category> GetCategories(string currentDirectory)
+        private static List<ArticleCategory> GetCategories(string currentDirectory)
         {
             string[] directories = Directory.GetDirectories(currentDirectory, "*", SearchOption.TopDirectoryOnly);
-            List<Category> categories = new List<Category>();
+            List<ArticleCategory> categories = new List<ArticleCategory>();
 
             if(directories.Length != 0)
             {
@@ -49,7 +49,7 @@ namespace Sereyn.CMS.CatalogueBuilder.Builders
 
                     string category = regexGroups["Category"].Value.Replace(@"\", "/") ?? "";
 
-                    categories.Add(new Category
+                    categories.Add(new ArticleCategory
                     {
                         Name = category.Split(new string[] { "/" }, StringSplitOptions.None).Last(),
                         Route = category.Replace(" ", "-"),
@@ -65,11 +65,11 @@ namespace Sereyn.CMS.CatalogueBuilder.Builders
         private static void SaveCatalogue()
         {
             Directory.CreateDirectory(@"build\catalogues");
-            FileStream fileStream = File.Create(@"build\catalogues\CategoryCatalogue.json");
+            FileStream fileStream = File.Create(@"build\catalogues\ArticleCategoryCatalogue.json");
             fileStream.Dispose();
             fileStream.Close();
 
-            StreamWriter sw = new StreamWriter(@"build\catalogues\CategoryCatalogue.json", false, Encoding.UTF8);
+            StreamWriter sw = new StreamWriter(@"build\catalogues\ArticleCategoryCatalogue.json", false, Encoding.UTF8);
             sw.Write(
                 JsonSerializer.Serialize(CategoryCatalogue)
                 );

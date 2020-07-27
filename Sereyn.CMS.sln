@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Tools", "Build Tools", "{CE427C3F-9B0E-49AE-843A-6BCA1395F593}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sereyn.CMS", "Sereyn.CMS\Sereyn.CMS.csproj", "{45F96653-FB57-401F-A287-D5B7A877CB31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sereyn.CMS", "Sereyn.CMS\Sereyn.CMS.csproj", "{45F96653-FB57-401F-A287-D5B7A877CB31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sereyn.CMS.CatalogueBuilder", "Sereyn.CMS.CatalogueBuilder\Sereyn.CMS.CatalogueBuilder.csproj", "{FB4779CD-8F65-4996-AB0E-5FED23A34921}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sereyn.CMS.CatalogueBuilder", "Sereyn.CMS.CatalogueBuilder\Sereyn.CMS.CatalogueBuilder.csproj", "{FB4779CD-8F65-4996-AB0E-5FED23A34921}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sereyn.CMS.Examples.Blog", "Sereyn.CMS.Examples.Blog\Sereyn.CMS.Examples.Blog.csproj", "{CEBA385D-ECC5-4DE0-8969-0886BDB9EC0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sereyn.CMS.Examples.Blog", "Sereyn.CMS.Examples.Blog\Sereyn.CMS.Examples.Blog.csproj", "{CEBA385D-ECC5-4DE0-8969-0886BDB9EC0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

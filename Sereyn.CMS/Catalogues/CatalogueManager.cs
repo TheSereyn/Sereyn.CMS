@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Sereyn.CMS.Catalogues.Models;
+using System;
 using System.IO;
 using System.Net.Http;
 using System.Text.Json;
@@ -30,7 +31,7 @@ namespace Sereyn.CMS.Catalogues
         {
             return await JsonSerializer.DeserializeAsync<Catalogue<T>>(
                 await GetCatalogueHttpStreamAsync(
-                    string.Format("Catalogues/{0}/{1}Catalogue.json",
+                    string.Format("{0}/{1}Catalogue.json",
                         _configuration["SereynCMS:Catalogues:Folder"],
                         typeof(T).Name
                         )
