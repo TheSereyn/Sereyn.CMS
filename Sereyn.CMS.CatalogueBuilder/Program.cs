@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sereyn.CMS.CatalogueBuilder.Builders;
+using System;
 
 namespace Sereyn.CMS.CatalogueBuilder
 {
@@ -6,7 +7,11 @@ namespace Sereyn.CMS.CatalogueBuilder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string contentFolder = args[0] ?? Environment.CurrentDirectory;
+
+            new ArticleBuilder().Build(contentFolder);
+            new PageBuilder().Build(contentFolder);
+            CategoryBuilder.Build(contentFolder);
         }
     }
 }
