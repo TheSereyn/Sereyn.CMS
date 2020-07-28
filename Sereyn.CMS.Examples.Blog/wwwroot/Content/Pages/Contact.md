@@ -1,5 +1,0 @@
-﻿{
-  "Title":"Contact Page"
-}
-
-# Contact
