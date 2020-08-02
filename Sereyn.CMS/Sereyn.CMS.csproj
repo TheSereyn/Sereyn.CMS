@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Authors>TheSereyn</Authors>
+    <Authors>Lee Buxton</Authors>
     <Company>Buxton Group Ltd</Company>
     <Product>Sereyn CMS</Product>
     <Description>Sereyn CMS is a simple content management solution that is designed for use with Blazor WASM.</Description>
@@ -11,7 +11,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright © 2020 Buxton Group Ltd</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/TheSereyn/Sereyn.CMS</RepositoryUrl>
     <AssemblyVersion>0.0.1.0</AssemblyVersion>
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\LICENSE">
+    <None Include="..\LICENSE.md">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

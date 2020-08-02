@@ -9,6 +9,8 @@ namespace Sereyn.CMS.CatalogueBuilder
         {
             string contentFolder = args[0] ?? Environment.CurrentDirectory;
 
+            Console.WriteLine(contentFolder);
+
             new ArticleBuilder().Build(contentFolder);
             new PageBuilder().Build(contentFolder);
             CategoryBuilder.Build(contentFolder);

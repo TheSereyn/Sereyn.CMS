@@ -1,7 +1,8 @@
 {
   "profiles": {
     "Sereyn.CMS.CatalogueBuilder": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\Lee Buxton\\Source\\Repos\\TheSereyn\\TheSereyn.Web\\TheSereyn\\wwwroot\""
     }
   }
 }
