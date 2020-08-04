@@ -58,10 +58,6 @@ namespace Sereyn.CMS.CatalogueBuilder
 
                 Console.WriteLine(string.Format("\t {0}", _catalogueDirectory));
             }
-
-            //new ArticleBuilder().Build(_contentDirectory);
-            //new PageBuilder().Build(_contentDirectory);
-            //CategoryBuilder.Build(_contentDirectory);
             
             ArticlesCatalogueFactory articlesCatalogueFactory = new ArticlesCatalogueFactory(_contentDirectory);
 
