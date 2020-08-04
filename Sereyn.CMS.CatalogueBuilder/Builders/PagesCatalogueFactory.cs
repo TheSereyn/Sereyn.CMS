@@ -6,30 +6,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using System.Text.RegularExpressions;
 
 namespace Sereyn.CMS.CatalogueBuilder.Builders
 {
-    public class PageBuilder : ContentBuilderBase
+    class PagesCatalogueFactory : CatalogueFactory<Page>
     {
-        public Catalogue<Page> PageCatalogue { get; set; } = new Catalogue<Page>();
+        private string _contentDirectory;
 
-        public PageBuilder()
+        public PagesCatalogueFactory(string contentDirectory)
         {
-            PageCatalogue.Items = new List<Page>();
+            _contentDirectory = contentDirectory;
         }
 
-        public void Build(string contentFolderLocation)
+        public override Catalogue<Page> GetCatalogue()
         {
-            string[] directories = Directory.GetDirectories(contentFolderLocation, "*", SearchOption.TopDirectoryOnly);
+            Catalogue<Page> PagesCatalogue = new Catalogue<Page>();
+
+            string[] directories = Directory.GetDirectories(_contentDirectory, "*", SearchOption.TopDirectoryOnly);
 
             string pagesFolder = directories.Where(x => x.Contains("Pages")).FirstOrDefault();
 
-            PageCatalogue.GeneratedOn = DateTime.UtcNow;
-            PageCatalogue.Items = GetPages(pagesFolder);
+            PagesCatalogue.GeneratedOn = DateTime.UtcNow;
+            PagesCatalogue.Items = GetPages(pagesFolder);
 
-            SaveCatalogue();
+            return PagesCatalogue;
         }
 
         private List<Page> GetPages(string currentFolderLocation)
@@ -86,21 +87,6 @@ namespace Sereyn.CMS.CatalogueBuilder.Builders
             }
 
             return contentItems;
-        }
-
-        internal override void SaveCatalogue()
-        {
-            Directory.CreateDirectory(@"build\catalogues");
-            FileStream fileStream = File.Create(@"build\catalogues\PageCatalogue.json");
-            fileStream.Dispose();
-            fileStream.Close();
-
-            StreamWriter sw = new StreamWriter(@"build\catalogues\PageCatalogue.json", false, Encoding.UTF8);
-            sw.Write(
-                JsonSerializer.Serialize(PageCatalogue)
-                );
-            sw.Dispose();
-            sw.Close();
         }
     }
 }
