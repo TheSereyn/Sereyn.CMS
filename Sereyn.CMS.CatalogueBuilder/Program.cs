@@ -39,13 +39,15 @@ namespace Sereyn.CMS.CatalogueBuilder
             }
 
             // Check if a catalogue directory has been provided
-            if(!string.IsNullOrEmpty(args[1]))
+            if(args.Length == 2)
             {
                 if (!Directory.Exists(args[1]))
                 {
                     Console.WriteLine("Catalogue directory not found. Creating directory...");
                     _catalogueDirectory = Directory.CreateDirectory(args[1]).FullName;
                 }
+
+                _catalogueDirectory = args[1];
             }
             else
             {
