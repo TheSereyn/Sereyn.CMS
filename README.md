@@ -59,3 +59,21 @@ I have put together an example Blazor WASM project which you can find on the Ser
 
 Repo Link: https://github.com/TheSereyn/Sereyn.CMS.Examples  
 Live Example: https://sereynblogexample.z16.web.core.windows.net
+
+## Running the Catalogue Builder
+
+The only element of the Sereyn CMS solution that needs to be generated are the Catalogues. These are generated using the Catalogue Builder tool. To generate the catalogues do the following:
+
+Download the approriate version of the Catalogue Builder from the release page. Then run the following command: 
+
+**Linux**
+```
+Sereyn.CMS.CatalogueBuilder-linux-x64 "<Content Folder location>" "<Catalogue Folder Location>"
+```
+
+**Windows**
+```
+Sereyn.CMS.CatalogueBuilder-win-x64.exe "<Content Folder location>" "<Catalogue Folder Location>"
+```
+
+I do plan to wrap this functionality into a GitHub Action in the future. Though for the moment, you have to run it everytime you want to generate the catalogues. 
