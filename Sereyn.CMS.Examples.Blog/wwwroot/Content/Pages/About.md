@@ -1,6 +1,0 @@
-﻿{
-  "Title":"About Page"
-}
-
-# About
-

@@ -3,11 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Authors>Lee Buxton</Authors>
-    <Company>The Sereyn</Company>
+    <Company>Buxton Group Ltd</Company>
     <Product>Sereyn CMS</Product>
     <Description>Sereyn CMS is a simple content management solution that is designed for use with Blazor WASM.</Description>
-    <Version>0.1.0</Version>
+    <Version>0.1.0-beta</Version>
     <SignAssembly>false</SignAssembly>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright © 2020 Buxton Group Ltd</Copyright>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TheSereyn/Sereyn.CMS</RepositoryUrl>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <FileVersion>0.0.1.0</FileVersion>
+    <PackageLicenseExpression></PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -21,6 +30,13 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.6" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.6" />
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

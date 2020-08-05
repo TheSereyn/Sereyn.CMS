@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Sereyn.CMS.Catalogues.Models;
+using Microsoft.Extensions.Configuration;
 using Sereyn.CMS.CatalogueBuilder.Models;
 using System;
 using System.Collections.Generic;
@@ -6,9 +7,9 @@ using System.IO;
 
 namespace Sereyn.CMS.CatalogueBuilder.Builders
 {
-    public abstract class ContentBuilderBase
+    abstract class CatalogueFactory<T>
     {
-        internal abstract void SaveCatalogue();
+        public abstract Catalogue<T> GetCatalogue();
 
         internal List<ContentFileInfo> GetContentFiles(string contentFolderLocation)
         {
