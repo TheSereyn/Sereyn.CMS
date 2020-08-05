@@ -64,7 +64,7 @@ Live Example: https://sereynblogexample.z16.web.core.windows.net
 
 The only element of the Sereyn CMS solution that needs to be generated are the Catalogues. These are generated using the Catalogue Builder tool. To generate the catalogues do the following:
 
-Download the approriate version of the Catalogue Builder from the release page. Then run the following command: 
+Download the appropriate version of the Catalogue Builder from the release page. Then run the following command: 
 
 **Linux**
 ```
