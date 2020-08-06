@@ -1,11 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Sereyn.CMS.Catalogues.Models;
+using Sereyn.CMS.Interfaces;
 using System.IO;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Sereyn.CMS.Catalogues
+namespace Sereyn.CMS.Client
 {
     public class CatalogueManager : ICatalogueManager
     {

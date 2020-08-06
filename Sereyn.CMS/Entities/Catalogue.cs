@@ -4,12 +4,23 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 
-namespace Sereyn.CMS.Catalogues.Models
+namespace Sereyn.CMS.Entities
 {
-    public class Catalogue<T>
+    public class Catalogue<T> where T : CatalogueItem
     {
-        public DateTime GeneratedOn { get; set; }
-        public List<T> Items { get; set; }
+        public DateTime GeneratedOn { get; private set; }
+        public List<T> Items { get; private set; }
+
+        public Catalogue()
+        {
+            GeneratedOn = DateTime.UtcNow;
+            Items = new List<T>();
+        }
+
+        public void AddItem(T catalogueItem)
+        {
+            Items.Add(catalogueItem);
+        }
 
         public void Save(string directoryPath)
         {

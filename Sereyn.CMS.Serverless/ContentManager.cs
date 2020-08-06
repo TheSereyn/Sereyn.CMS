@@ -1,11 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Sereyn.CMS.Contents;
 using Sereyn.CMS.Contents.Models;
+using Sereyn.CMS.Interfaces;
 using System;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Sereyn.CMS.Contents
+namespace Sereyn.CMS.Client
 {
     public class ContentManager : IContentManager
     {

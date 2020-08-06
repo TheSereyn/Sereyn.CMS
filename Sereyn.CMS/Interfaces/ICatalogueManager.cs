@@ -1,7 +1,7 @@
 ﻿using Sereyn.CMS.Catalogues.Models;
 using System.Threading.Tasks;
 
-namespace Sereyn.CMS.Catalogues
+namespace Sereyn.CMS.Interfaces
 {
     public interface ICatalogueManager
     {

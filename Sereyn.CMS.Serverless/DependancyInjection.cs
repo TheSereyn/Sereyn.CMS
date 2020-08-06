@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Sereyn.CMS.Catalogues;
-using Sereyn.CMS.Contents;
+using Sereyn.CMS.Interfaces;
 
-namespace Sereyn.CMS
+namespace Sereyn.CMS.Client
 {
     public static class DependancyInjection
     {
