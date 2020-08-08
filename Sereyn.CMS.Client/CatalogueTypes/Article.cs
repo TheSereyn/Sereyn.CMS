@@ -1,5 +1,4 @@
 ﻿using Sereyn.CMS.Entities;
-using System;
 
 namespace Sereyn.CMS.Client.CatalogueTypes
 {

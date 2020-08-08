@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sereyn.CMS", "Sereyn.CMS\Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sereyn.CMS.CatalogueBuilder", "Sereyn.CMS.CatalogueBuilder\Sereyn.CMS.CatalogueBuilder.csproj", "{FB4779CD-8F65-4996-AB0E-5FED23A34921}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sereyn.CMS.Client", "Sereyn.CMS.Serverless\Sereyn.CMS.Client.csproj", "{5E061228-1F3C-49E1-BDFB-D5935F692BF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sereyn.CMS.Client", "Sereyn.CMS.Client\Sereyn.CMS.Client.csproj", "{5E061228-1F3C-49E1-BDFB-D5935F692BF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

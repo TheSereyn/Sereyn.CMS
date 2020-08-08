@@ -1,8 +1,9 @@
-﻿using Sereyn.CMS.ValueObjects;
+﻿using Sereyn.CMS.Interfaces;
+using Sereyn.CMS.ValueObjects;
 
 namespace Sereyn.CMS.Entities
 {
-    public class CatalogueItem
+    public class CatalogueItem : ICatalogueItem
     {
         public string Route { get; set; }
         public string Name { get; set; }

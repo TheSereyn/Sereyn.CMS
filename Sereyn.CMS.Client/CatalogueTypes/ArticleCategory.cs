@@ -6,5 +6,6 @@ namespace Sereyn.CMS.Catalogues.Models
     public class ArticleCategory : CatalogueItem
     {
         public List<ArticleCategory> SubCategories { get; set; }
+
     }
 }

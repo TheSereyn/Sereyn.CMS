@@ -25,10 +25,10 @@ namespace Sereyn.CMS.ValueObjects
                 LastUpdated = fileInfo.LastWriteTimeUtc
             };
         }
-
         protected override IEnumerable<object> GetAtomicValues()
         {
-            yield return File;
+            yield return FileName;
+            yield return FileLocation;
             yield return Created;
             yield return LastUpdated;
         }
