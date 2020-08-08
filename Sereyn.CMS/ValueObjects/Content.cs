@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
+using Sereyn.CMS.Common;
 using System.Collections.Generic;
 using System.IO;
-using Markdig;
 
-namespace Sereyn.CMS.Contents.Models
+namespace Sereyn.CMS.ValueObjects
 {
-    public class Content
+    public class Content : BaseValueObject
     {
         #region Methods
 
@@ -20,7 +19,6 @@ namespace Sereyn.CMS.Contents.Models
                 RawMarkdown = reader.ReadToEnd()
             };
         }
-
         private static IConfiguration GetConfiguration(Stream content, out StreamReader reader)
         {
             return new ConfigurationBuilder().AddJsonStream(
@@ -52,7 +50,7 @@ namespace Sereyn.CMS.Contents.Models
 
                 if (OpenBracketCounter == 0 && c == '}')
                 {
-                    return new String(chars.ToArray());
+                    return new string(chars.ToArray());
                 }
             }
 
@@ -67,6 +65,11 @@ namespace Sereyn.CMS.Contents.Models
             stream.Position = 0;
             return stream;
         }
+        protected override IEnumerable<object> GetAtomicValues()
+        {
+            yield return Configuration;
+            yield return RawMarkdown;
+        }
 
         #endregion
 
@@ -74,15 +77,6 @@ namespace Sereyn.CMS.Contents.Models
 
         public IConfiguration Configuration { get; private set; }
         public string RawMarkdown { get; private set; }
-        public string HtmlMarkup {
-            get
-            {
-                return Markdown.ToHtml(
-                    RawMarkdown,
-                    new MarkdownPipelineBuilder().UseAdvancedExtensions().Build()
-                    );
-            }
-        }
 
         #endregion
 

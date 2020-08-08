@@ -1,25 +1,27 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Sereyn.CMS.Contents.Models;
-using System;
+using Sereyn.CMS.Interfaces;
+using Sereyn.CMS.ValueObjects;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Sereyn.CMS.Contents
+namespace Sereyn.CMS.Client
 {
     public class ContentManager : IContentManager
     {
         #region Members
 
         private readonly IConfiguration _configuration;
+        private readonly ICatalogueManager _catalogueManager;
 
         #endregion
 
         #region Constructor
 
-        public ContentManager(IConfiguration configuration)
+        public ContentManager(IConfiguration configuration, ICatalogueManager catalogueManager)
         {
             _configuration = configuration;
+            _catalogueManager = catalogueManager;
         }
 
         #endregion

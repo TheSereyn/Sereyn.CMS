@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Sereyn.CMS.Entities;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Sereyn.CMS.Catalogues.Models
 {
-    public class ArticleCategory
+    public class ArticleCategory : CatalogueItem
     {
-        public string Name { get; set; }
-        public string Route { get; set; }
         public List<ArticleCategory> SubCategories { get; set; }
+
     }
 }

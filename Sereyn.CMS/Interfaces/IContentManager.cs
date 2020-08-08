@@ -1,7 +1,7 @@
-﻿using Sereyn.CMS.Contents.Models;
+﻿using Sereyn.CMS.ValueObjects;
 using System.Threading.Tasks;
 
-namespace Sereyn.CMS.Contents
+namespace Sereyn.CMS.Interfaces
 {
     public interface IContentManager
     {

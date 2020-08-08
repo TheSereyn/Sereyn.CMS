@@ -1,11 +1,14 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Sereyn.CMS.Catalogues.Models;
+using Sereyn.CMS.Entities;
+using Sereyn.CMS.Interfaces;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Sereyn.CMS.Catalogues
+namespace Sereyn.CMS.Client
 {
     public class CatalogueManager : ICatalogueManager
     {
@@ -26,16 +29,18 @@ namespace Sereyn.CMS.Catalogues
 
         #region Methods
 
-        public async Task<Catalogue<T>> GetCatalogueAsync<T>()
+        public async Task<Catalogue<T>> GetCatalogueAsync<T>() where T : ICatalogueItem
         {
-            return await JsonSerializer.DeserializeAsync<Catalogue<T>>(
+            Catalogue<T> catalogue = await JsonSerializer.DeserializeAsync<Catalogue<T>>(
                 await GetCatalogueHttpStreamAsync(
-                    string.Format("{0}/{1}Catalogue.json",
+                    string.Format("{0}/{1}",
                         _configuration["SereynCMS:Catalogues:Folder"],
-                        typeof(T).Name
+                        Catalogue<T>.FileName
                         )
                     )
                 );
+
+            return catalogue;
         }
 
         private async Task<Stream> GetCatalogueHttpStreamAsync(string catalogueFile)
