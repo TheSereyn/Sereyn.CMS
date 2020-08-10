@@ -1,9 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Options;
 using Sereyn.CMS.Entities;
 using Sereyn.CMS.Interfaces;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -14,15 +12,15 @@ namespace Sereyn.CMS.Client
     {
         #region Members
 
-        private readonly IConfiguration _configuration;
+        private readonly ClientOptions _clientOptions;
 
         #endregion
 
         #region Constructor
 
-        public CatalogueManager(IConfiguration configuration)
+        public CatalogueManager(IOptions<ClientOptions> clientOptionsAccessor)
         {
-            _configuration = configuration;
+            _clientOptions = clientOptionsAccessor.Value;
         }
 
         #endregion
@@ -34,7 +32,7 @@ namespace Sereyn.CMS.Client
             Catalogue<T> catalogue = await JsonSerializer.DeserializeAsync<Catalogue<T>>(
                 await GetCatalogueHttpStreamAsync(
                     string.Format("{0}/{1}",
-                        _configuration["SereynCMS:Catalogues:Folder"],
+                        _clientOptions.CatalogueFolder,
                         Catalogue<T>.FileName
                         )
                     )
@@ -47,7 +45,7 @@ namespace Sereyn.CMS.Client
         {
             HttpClient http = new HttpClient
             {
-                BaseAddress = new System.Uri(_configuration["SereynCMS:BaseUrl"])
+                BaseAddress = new System.Uri(_clientOptions.BaseUrl)
             };
 
             HttpResponseMessage response = await http.GetAsync(catalogueFile);
