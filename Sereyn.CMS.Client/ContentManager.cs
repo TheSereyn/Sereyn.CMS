@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Options;
 using Sereyn.CMS.Interfaces;
 using Sereyn.CMS.ValueObjects;
 using System.IO;
@@ -11,17 +11,15 @@ namespace Sereyn.CMS.Client
     {
         #region Members
 
-        private readonly IConfiguration _configuration;
-        private readonly ICatalogueManager _catalogueManager;
+        private readonly ClientOptions _clientOptions;
 
         #endregion
 
         #region Constructor
 
-        public ContentManager(IConfiguration configuration, ICatalogueManager catalogueManager)
+        public ContentManager(IOptions<ClientOptions> clientOptionsAccessor)
         {
-            _configuration = configuration;
-            _catalogueManager = catalogueManager;
+            _clientOptions = clientOptionsAccessor.Value;
         }
 
         #endregion
@@ -38,7 +36,7 @@ namespace Sereyn.CMS.Client
         {
             HttpClient http = new HttpClient
             {
-                BaseAddress = new System.Uri(_configuration["SereynCMS:BaseUrl"])
+                BaseAddress = new System.Uri(_clientOptions.BaseUrl)
             };
 
             HttpResponseMessage response = await http.GetAsync(
