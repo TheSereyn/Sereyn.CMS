@@ -5,8 +5,8 @@
     <Authors>Lee Buxton</Authors>
     <Company>Buxton Group Ltd</Company>
     <Product>Sereyn CMS</Product>
-    <Description>Sereyn CMS is a simple content management solution that is designed for use with Blazor WASM.</Description>
-    <Version>0.1.0-beta</Version>
+    <Description>Sereyn CMS is a simple content management solution. This package only contains the domain speciific information and you will need the Sereyn.CMS.Client that implements this package.</Description>
+    <Version>0.2.0-beta</Version>
     <SignAssembly>false</SignAssembly>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -14,8 +14,8 @@
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/TheSereyn/Sereyn.CMS</RepositoryUrl>
-    <AssemblyVersion>0.0.1.0</AssemblyVersion>
-    <FileVersion>0.0.1.0</FileVersion>
+    <AssemblyVersion>0.0.2.0</AssemblyVersion>
+    <FileVersion>0.0.2.0</FileVersion>
     <PackageLicenseExpression></PackageLicenseExpression>
   </PropertyGroup>
 

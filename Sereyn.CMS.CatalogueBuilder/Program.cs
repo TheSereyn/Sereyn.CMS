@@ -1,5 +1,4 @@
 ﻿using Sereyn.CMS.CatalogueBuilder.Builders;
-using Sereyn.CMS.Catalogues.Models;
 using System;
 using System.IO;
 
@@ -64,7 +63,7 @@ namespace Sereyn.CMS.CatalogueBuilder
             articlesCatalogueFactory.GetCatalogue().Save(_catalogueDirectory);
             articlesCatalogueFactory.GetCatagoriesCatalogue().Save(_catalogueDirectory);
 
-            new PagesCatalogueFactory(_contentDirectory).GetCatalogue().Save(_catalogueDirectory);
+            new StaticPagesCatalogueFactory(_contentDirectory).GetCatalogue().Save(_catalogueDirectory);
 
             
 

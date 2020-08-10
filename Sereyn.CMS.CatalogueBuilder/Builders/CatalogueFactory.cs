@@ -1,13 +1,13 @@
-﻿using Sereyn.CMS.Catalogues.Models;
-using Microsoft.Extensions.Configuration;
-using Sereyn.CMS.CatalogueBuilder.Models;
+﻿using Microsoft.Extensions.Configuration;
+using Sereyn.CMS.Entities;
+using Sereyn.CMS.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
 namespace Sereyn.CMS.CatalogueBuilder.Builders
 {
-    abstract class CatalogueFactory<T>
+    abstract class CatalogueFactory<T> where T : CatalogueItem
     {
         public abstract Catalogue<T> GetCatalogue();
 
@@ -81,7 +81,7 @@ namespace Sereyn.CMS.CatalogueBuilder.Builders
 
                 if (OpenBracketCounter == 0 && c == '}')
                 {
-                    return new String(chars.ToArray());
+                    return new string(chars.ToArray());
                 }
             }
 

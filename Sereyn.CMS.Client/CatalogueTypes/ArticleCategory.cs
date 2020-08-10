@@ -1,7 +1,7 @@
 ﻿using Sereyn.CMS.Entities;
 using System.Collections.Generic;
 
-namespace Sereyn.CMS.Catalogues.Models
+namespace Sereyn.CMS.Client.CatalogueTypes
 {
     public class ArticleCategory : CatalogueItem
     {

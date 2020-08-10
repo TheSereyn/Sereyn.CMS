@@ -1,6 +1,6 @@
 ﻿using Sereyn.CMS.Entities;
 
-namespace Sereyn.CMS.Catalogues.Models
+namespace Sereyn.CMS.Client.CatalogueTypes
 {
     public class StaticPage : CatalogueItem
     {

@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sereyn.CMS.Client\Sereyn.CMS.Client.csproj" />
     <ProjectReference Include="..\Sereyn.CMS\Sereyn.CMS.csproj" />
   </ItemGroup>
 
